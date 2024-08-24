@@ -1,0 +1,43 @@
+meta.setTitle("Register.wpyh")
+
+engine.addScript("/index.wpys")
+
+header1('WebPy Domain Hoster')
+
+header3('Welcome to the WebPy Hosting Service. Here you can claim your favorite domain and link it with your server.')
+paragraph('To correctly display websites your server needs to pass these requirements:\n- The Server needs to listen on port 8950 for wpyp. If you want to support wpyps the server also needs to listen on 8951. If you are going to use wpyps you need to enable SSL encryption.\n- Your Server needs to listen on wpyp. If you want to you can rewrite the request to wpyps.\n- Your Server needs to listen on his IP address. You can rewrite the request if needed to your domain name of the server.\n- To display a website, your server must be configured so that if no file path is specified, the index.wpym file is loaded.\n- The file index.wpym must exist in your webroot.')
+paragraph('Domain name requirements:\n- Only letters and numbers\n- The domain must contain a domain name and top level domain.\nPLEASE NOTE: Your claimed domain will always end with .wpyh. So pytube.net will become pytube.net.wpyh')
+paragraph('The meaning behind the Secret Key:\nThe Secret key is ment to secure your claimed domain name, so that other can\'t modify your domain.\nThat\'s why your Secure Key needs to be secure. Keep in mind that the word "key" is not a good key.')
+
+groupBox((
+	hBox((
+		textInput('Your wanted Domain Name', id="rdomain"),
+		textInput('IP address of your server', id="rip"),
+		textInput('Choose a Secret Key', id="rkey", password=True)
+	)),
+	button('Register', id='register', disabled=True),
+    paragraph(id="rreturn")
+), title="Register")
+
+stretch()
+
+groupBox((
+	hBox((
+		textInput('Your Domain Name', id="ddomain"),
+		textInput('Your Secret Key', id="dkey", password=True)
+	)),
+	button('Delete', id='delete', disabled=True),
+    paragraph(id="dreturn")
+), title="Delete Domain")
+
+stretch()
+
+groupBox((
+	hBox((
+		textInput('Your Domain Name', id="udomain"),
+		textInput('Your new IP address of your server', id="uip"),
+		textInput('Your Secret Key', id="ukey", password=True)
+	)),
+	button('Update Address', id='update', disabled=True),
+    paragraph(id="ureturn")
+), title="Update IP-Address")
